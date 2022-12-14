@@ -14,9 +14,8 @@ setuptools.setup(
     url="https://github.com/bayinfosys/pydform",
     packages=["pydform"],
     package_data={
-        "pydform.js": ["js/*.js"]
+        "pydform": ["js/*.js"]
     },
-    include_package_data=True,
     classifiers=[
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
