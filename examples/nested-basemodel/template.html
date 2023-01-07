@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title>PydForm Template</title>
+  <link rel="shortcut icon" href="#">
+
+{{ pydform_script_header.common | safe }}
+{{ pydform_script_header.submit | safe }}
+{{ pydform_script_header.append | safe }}
+{{ pydform_script_header.collapse | safe }}
+</head>
+
+<body>
+  <h1>data list</h1>
+    {% if data %}
+      {% for dat in data %}
+    <p>{{ dat | to_json | safe }}</p>
+      {% endfor %}
+    {% endif %}
+  <hr />
+
+  <h1>append new data</h1>
+
+<style>
+form, section, section fieldset {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+}
+
+form section,
+section fieldset {
+    grid-column: 1 / 3;
+}
+
+label, section fieldset label {
+    grid-column: 1 / 2;
+}
+
+input, section fieldset input {
+    grid-column: 2 / 3;
+}
+
+.collapsible {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+</style>
+
+  {{ append_new_data | asform | safe }}
+  <hr />
+</body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title>PydForm Template</title>
+  <link rel="shortcut icon" href="#">
+
+{{ pydform_script_header.submit | safe }}
+{{ pydform_script_header.append | safe }}
+{{ pydform_script_header.collapse | safe }}
+</head>
+
+<body>
+  <h1>user list</h1>
+    {% if users %}
+      {% for user in users %}
+    <p>{{ user.name }}</p>
+      {% endfor %}
+    {% endif %}
+  <hr />
+
+  <h1>append new user</h1>
+  {{ append_new_user | asform | safe }}
+  <hr />
+</body>
+</html>
