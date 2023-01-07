@@ -6,7 +6,7 @@ clean:
 	find . -type d -name __pycache__ -exec rm -r {} \+
 
 serve:
-	uvicorn --log-level=debug pydform.examples.dict-field.main:app --reload
+	uvicorn --log-level=debug examples.nested-basemodel.main:app --reload
 
 test:
 	pytest -vv .
